@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Naber</title>
+</head>
+<body>
+	<form action="/create" method="post">
+		<input type="text" name="text">
+		<input type="submit" value="Post At">
+	</form>
+	<ul>
+		{%	for i in post_list %}
+		<li>{{ i }}</li>
+		{% endfor %}
+	</ul>
+
+</body>
+</html>
