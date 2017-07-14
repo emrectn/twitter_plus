@@ -2,13 +2,12 @@
 <html>
 <head>
 	<title>Dusuk Butceli Twitter</title>
-	<script language="JavaScript">alert("Giris Yaptınız..");</script>
 
 </head>
 <body >
 
 	<div>
-		<h1>Bu Gun nasıl Hissediyorsun {{session.user.name}}</h1>
+		<h1>Bu Gun nasıl Hissediyorsun {{session.user}}</h1>
 	</div>
 
 	<form action="/create" method="post">
@@ -18,7 +17,11 @@
 
 	<ul>
 		{%	for p in post %}
-		<li><span>{{ p.text }} ({{p.time | datetimefilter}})</span>&nbsp;<a href="/delete?id={{ loop.index }}">×</a></li>
+		<li><span>{{ p.text }} ({{p.time | datetimefilter}})</span>&nbsp;<a href="/delete?id={{ loop.index }}">×</a>
+
+			{{p.user}}
+		</li>
+
 		{% endfor %}
 	</ul>
 

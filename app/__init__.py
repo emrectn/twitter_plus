@@ -6,6 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 posts = []
 users = {}
+users['a'] = {'name': 'a', 'surname': 'a', 'password': 'a'}
 
 
 app.secret_key = 'F12Zr47j\3yX R~X@H!jmM]Lwf/,?KT'
@@ -30,10 +31,15 @@ def post_yonlendir():
 def post_yazdir():
     text = request.form.get("text")
     current_time = time()
-    p = {'text': text, 'time': current_time}
-    if p['text'].strip():
-        posts.append(p)
-    return redirect("/index")
+    if 'user' in session:
+        p = {'text': text, 'time': current_time, 'user': session['user']}
+        if p['text'].strip():
+            posts.append(p)
+            print("Twitt :  "+session['user'])
+
+        return redirect("/index")
+    else:
+        return redirect("/give_info?info=Once Giris Yapiniz")
 
 
 @app.route('/delete', methods=['GET'])
@@ -84,7 +90,7 @@ def sign_in():
         message = "Böyle bir kayit bulunamadi"
         print(message)
 
-    return redirect("/give_info?infor="+message)
+    return redirect("/give_info?info="+message)
 
 # @app.route("/logout/<str:email>") parametre yollamak istenirse
 # def logout(email):parametre
@@ -92,9 +98,13 @@ def sign_in():
 
 @app.route("/logout")
 def logout():
-    print("{} cikis yapti".format(session['user']))
-    del session['user']
-    return redirect("/")
+    if 'user' in session:
+        print("{} cikis yapti".format(session['user']))
+        del session['user']
+        message = "Cikis Yapildi"
+    else:
+        message = "Once giris yapiniz"
+    return redirect("/give_info?info="+message)
 
 
 @app.route("/give_info")
