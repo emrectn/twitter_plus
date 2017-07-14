@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Naber</title>
+	<title>Dusuk Butceli Twitter</title>
+	<script language="JavaScript">alert("Giris Yaptınız..");</script>
+
 </head>
-<body>
+<body >
+
+	<div>
+		<h1>Bu Gun nasıl Hissediyorsun {{session.user.name}}</h1>
+	</div>
+
 	<form action="/create" method="post">
 		<input type="text" name="text">
 		<input type="submit" value="Post At">
 	</form>
+
 	<ul>
-		{%	for i in post_list %}
-		<li>{{ i }}</li>
+		{%	for p in post %}
+		<li><span>{{ p.text }} ({{p.time | datetimefilter}})</span>&nbsp;<a href="/delete?id={{ loop.index }}">×</a></li>
 		{% endfor %}
 	</ul>
+
+	<form action="/logout">
+		<input type="submit" value="Log Out" style="float: left" >
+	</form>
+
+	<form action="/">
+		<input type="submit" value="Back MainPage" style="float: left" >
+	</form>
 
 </body>
 </html>
