@@ -1,37 +1,112 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dusuk Butceli Twitter</title>
+{% extends 'base.html' %}
+{% block title%}Main Page {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/mainpage.css">
+{% endblock %}
+{% block content %}
+<header id="header">
+	<div class="header-logo">
 
-</head>
-<body >
+		<strong class="slogan">Twitter++</strong>
+		<strong class="slogan">Hi Guys</strong>
 
-	<div>
-		<h1>Bu Gun nasıl Hissediyorsun {{session.user}}</h1>
+	</div>
+			<span class="header-sign-area">Aldready have an account ? <a onclick="document.getElementById('show_hide').style.display='none';
+				document.getElementById('show_hide1').style.display='block';"
+			class="box">Sign in</a></span>
+	</div>
+</header>
+
+<div class="container">
+	<div class="login-container">
+		<div class="login-section-intro">
+
+			<h1 class="login-h1">Twitter++ yeni insanlarla tanışmak için bir sosyal keşif web sitesidir.</h1>
+
+			<p>
+				Dünyanın her tarafından milyonlarca insan Twitter++ üzerinde her gün post atıp, atarlı giderli sözler paylaşıyor.
+			</p>
+
+		</div>
+
+		<div class="loginbox">
+			<div class="loginbox-tabset">
+
+				<a onclick="document.getElementById('show_hide').style.display='block';
+				document.getElementById('show_hide1').style.display='none'; opacity=1;"
+				class="log-tabs active">Login</a>
+
+
+
+				<a onclick="document.getElementById('show_hide').style.display='none';
+				document.getElementById('show_hide1').style.display='block';opacity=1;"
+
+				class="log-tabs">Registration</a>
+			</div>
+
+			<div class="loginbox-container" id="show_hide">
+				<span>We are waiting for you!</span>
+
+				<form class="login-form" action="/auth/login" method="post">
+
+					<input class="inputbox" type="text" name="username" autocomplete="off" placeholder="Username" style="display: block;">
+
+					<input class="inputbox" type="password" name="password" autocomplete="off" placeholder="Password" style="display: block;">
+
+					<input class="info inputbox" type="submit" value="Sign in">
+
+				</form>
+				<a href="http://google.com"> Forgot password? </a>
+			</div>
+
+			<div class="singup-container" id="show_hide1">
+
+				<span>Join us!</span>
+
+				<form class="login-form" action="/user/add" method="post">
+					<input class="inputbox" type="text" name="name" autocomplete="off" placeholder="Name" style="display: block;">
+
+					<input class="inputbox" type="text" name="username" autocomplete="off" placeholder="New Username" style="display: block;">
+
+					<input class="inputbox" type="password" name="password" autocomplete="off" placeholder="Password" style="display: block;">
+
+					<input class="info inputbox" type="submit" value="Sign Up">
+				</form>
+			</div>
+
+
+
+
+
+			</div>
+
+		</div>
+
 	</div>
 
-	<form action="/create" method="post">
-		<input type="text" name="text">
-		<input type="submit" value="Post At">
+</div>
+<!-- <div class="container">
+	<h2 id="mainpage-h2">Twitter'a hoş geldin.</h5>
+	<font id="mainpage-font">Arkadaşlarınla ve diğer etkileyici kişiler ile iletişim kur. İlgini çeken konulardaki güncellemelerden anında haberdar ol. Ve öne çıkan olayları gelişmeleriyle birlikte, gerçek zamanlı olarak ve her yönüyle izle.</font>
+	</div>
+<div class="login">
+	<div>
+		<form class="box form-login" action="/auth/login" method="post">
+		<input type="text" name="username" autocomplete="off" placeholder="Username" style="display: block;">
+		<input type="password" name="password" autocomplete="off" placeholder="Password" style="display: block;">
+		<input class="info" type="submit" value="Login">
 	</form>
+	</div>
+	<div class="sing-up">
+		<h5 id="sing-up-h5">Twitter'da yenimisiniz? Kaydol</h5>
+		<form class="box form-singup" action="/user/add" method="post">
+		<input type="text" name="name" autocomplete="off" placeholder="Name" style="display: block;">
+		<input type="text" name="username" autocomplete="off" placeholder="Username" style="display: block;">
+		<input type="password" name="password" autocomplete="off" placeholder="Password" style="display: block;">
+		<input class="success" type="submit" value="Sign Up">
 
-	<ul>
-		{%	for p in post %}
-		<li><span>{{ p.text }} ({{p.time | datetimefilter}})</span>&nbsp;<a href="/delete?id={{ loop.index }}">×</a>
+	</div>
+</div> -->
 
-			{{p.user}}
-		</li>
 
-		{% endfor %}
-	</ul>
-
-	<form action="/logout">
-		<input type="submit" value="Log Out" style="float: left" >
-	</form>
-
-	<form action="/">
-		<input type="submit" value="Back MainPage" style="float: left" >
-	</form>
-
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,260 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    height: 57px;
+    padding: 10px;
+    font-size: 12px;
+}
+button {
+    margin: 8px;
+    box-shadow: 0 0 0 0 #ccc;
+    transition: transform .1s, box-shadow .1s;
+    outline: none;
+    border: none;
+    padding: 1em;
+}
+
+button:hover, button:focus {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0 0 #ccc;
+    transition: transform .1s, box-shadow .1s, border-right .1s, border-bottom .1s;
+}
+
+button:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+    transition: transform .1s, box-shadow .1s, border-right .1s, border-bottom .1s;
+
+}
+
+input[type="submit"] {
+    background-color: #39dfb5;
+    width: 100%;
+}
+
+.danger {
+    background: tomato;
+    color: white;
+}
+
+.success {
+    background: limegreen;
+    color: white;
+}
+
+.warning {
+    background: yellow;
+    color: white;
+}
+
+.primary {
+    background: blueviolet;
+    color: white;
+}
+
+.info {
+    background: lightblue;
+    color: white;
+    float: left;
+}
+
+.default {
+    background: lightgreen;
+    color: white;
+}
+
+.box {
+    border: 1px solid #fff;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 5px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+
+.inputbox {
+    border: 1px solid #d8e0e3;
+    border-radius: 50px;
+    padding: 5px 5px 5px 10px;
+    font-size: 10px;
+    margin-bottom: 5px;
+    width: calc(100% - 16px);
+    color: grey;
+    font-weight: 1px;
+
+
+}
+
+.label {
+    padding: 8px;
+}
+
+#header{
+    position: fixed;
+    padding: 10px;
+    text-align: justify;
+    line-height: 0;
+    color:#fff;
+    z-index: 10;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: initial;
+    box-sizing: border-box;
+}
+
+.header-sign-area{
+    float: right;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 30px;
+    vertical-align: middle;
+    max-width: 50%;
+    position: relative;
+    z-index: 5;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+
+}
+
+.header-sign-area a{
+    cursor: pointer;
+}
+
+.header-logo{
+    position: absolute;
+    padding: 10px;
+    z-index: 1;
+    text-align:center;
+}
+
+.header-sign-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.header-sign-list li{
+    float: right;
+}
+
+.container{
+    position: absolute;
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+    margin-top: 57px;
+}
+
+.login-container{
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    max-width: 960px;
+
+}
+
+.login-section-intro{
+    width: 420px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.login-h1{
+    margin: 60px 0 20px;
+    font-size: 25px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.loginbox{
+    display: inline-block;
+    vertical-align: middle;
+    width: 342px;
+    margin: 40px 0 0 35px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333c40;
+
+}
+
+.loginbox-tabset{
+    height: 30px;
+}
+.log-tabs{
+    background: #fff;
+    float: left;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #546e7a;
+    cursor: pointer;
+    transition: all .3s ease;
+    opacity: .45;
+    border-radius: 10px 10px 0 0;
+    margin-left: 5px;
+}
+
+.loginbox-container{
+    margin-left: 5px;
+    background: #fff;
+    border-radius: 0 10px 10px;
+    padding: 15px 20px 30px;
+    text-align: center;
+    width: 245px;
+    height: 120px;
+}
+
+.singup-container{
+    display: none;
+    margin-left: 5px;
+    background: #fff;
+    border-radius: 0 10px 10px;
+    padding: 20px 20px 30px;
+    text-align: center;
+    width: 245px;
+    height: 120px;
+}
+
+.login-form{
+    margin-top: 10px;
+    height: 100px;
+}
+
+.loginbox-container a{
+    font-size: 11px;
+    color:#67c0ff;
+}
+
+.loginbox-tabset a:focus + div{
+    display: block;
+}
+
+.active{
+    opacity: 1;
+}
+

@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    background: url('bd.jpg') 100% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+ul{
+    padding: 0 10px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.line{
+    padding-bottom: 10px;
+}
+
+.outbox{
+    border: 1px solid #fff;
+    padding: 5px;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.innerbox{
+    border-radius: 5px;
+    border-color: grey;
+    background-color: #fff;
+    margin:2px;
+}
+
+li{
+    margin:3px;
+}
+.header-content{
+    padding: 10px 200px;
+    width: calc(100% - 406px);
+    height: 20px;
+    background: #696969;
+    color:red;
+    font-weight: 900;
+}
+
+.right-container{
+    position: relative;
+    height: 100%;
+    width: 200px;
+    float: left;
+}
+
+.mid-container{
+    background-color: #f1f1f1;
+    float: left;
+    width: calc(100% - 402px);
+    min-height: 500px;
+    margin-top:5px;
+
+}
+
+.your-profile{
+    margin: 10px 0px;
+    height: 100px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+
+}
+
+#profile-photo{
+    float: left;
+    height: 86px;
+    width: 86px;
+    background: url('pp.jpg') 100% no-repeat;
+    background-size: cover;
+}
+
+#logout{
+    float: left;
+}
+
+.tweet{
+    float: left;
+    width: 220px;
+    height: 60px;
+}
+
+.alltweet{
+    float: left;
+    width: calc(100% - 232px - 20px);
+}
+
+.postspan{
+    padding: 10px 2px;
+}
+
+#textbox{
+    width: calc(100% - 16px);
+    padding: 5px 6px;
+    height: 15px;
+    font-size: 10px;
+}

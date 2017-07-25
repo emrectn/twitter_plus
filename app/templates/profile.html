@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/profile.css">
+{% endblock %}
+{% block content %}
+
+<div class="outbox header-content">
+	<a class="outbox" href="/user/profile">Twitter++</a>
+	<a class="outbox" href="/user/profile">My Profile</a>
+
+</div>
+
+	<div class="right-container">
+
+	</div>
+
+	<div class="mid-container outbox">
+
+
+		<div class="your-profile outbox innerbox">
+			<div id="profile-photo" class="outbox innerbox">
+
+			</div>
+			<form id="logout" class="innerbox" action="/auth/logout">
+				<input class="danger" type="submit" value="LogOut">
+			</form>
+
+		</div>
+
+		<div class="tweet outbox innerbox">
+
+			<form class="innerbox" action="/post/create" method="post">
+				<input id="textbox" class="innerbox" type="text" name="text" maxlength="180" placeholder="How do you Feel?" autocomplete="off">
+				<input class="innerbox" id="post-button" class="success" type="submit" value="Tweet">
+			</form>
+
+		</div>
+
+		<div class="alltweet outbox innerbox">
+			<ul>
+				<li class="line">Tweetler</li>
+			{% for p in posts|reverse %}
+
+				<li class="outbox innerbox"><span >
+				@{{session.user}}: <a class="close-mark" href="/post/delete?id={{ p.id }}">×</a> <br> &nbsp;&nbsp;{{ p.text }}</span></li>
+			{%endfor%}
+			</ul>
+
+		</div>
+		<div class="outbox innerbox">
+			<span>Follow us!</span>
+		</div>
+
+	</div>
+
+	{% endblock %}
